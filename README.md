@@ -4,7 +4,7 @@
 
 > A web application that displays scores submitted by different players.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./img/screenShot.png)
 
 ## Built With
 
