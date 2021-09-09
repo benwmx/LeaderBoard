@@ -35,3 +35,9 @@ const displayData = async () => {
   addScoresToDom(scores);
 };
 
+submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const user = document.getElementById('user').value;
+  const score = document.getElementById('score').value;
+  postData(user, score);
+});
