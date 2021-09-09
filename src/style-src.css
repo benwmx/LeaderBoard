@@ -38,6 +38,8 @@ main {
 
 .list {
   border: 1px solid #000;
+  height: 70%;
+  overflow: auto;
 }
 
 .list ul {

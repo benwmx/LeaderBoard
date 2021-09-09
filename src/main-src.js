@@ -13,18 +13,20 @@ const postData = async (user, score) => {
 };
 
 const addScoresToDom = (scores) => {
-  const msg = document.getElementById('msg-empty');
-  msg.parentElement.removeChild(msg);
-  scores.forEach(score => {
+  const listOfScores = document.getElementById('list');
+  listOfScores.innerHTML = '';
+  scores.forEach((score) => {
     const li = document.createElement('li');
+    li.className = 'flex-list';
     const userText = document.createElement('p');
-    userText.classList.add('user flex-list-item');
+    userText.className = 'user flex-list-item';
     userText.innerText = score.user;
     const scoreText = document.createElement('p');
-    scoreText.classList.add('score flex-list-item');
+    scoreText.className = 'score flex-list-item';
     scoreText.innerText = score.score;
     li.appendChild(userText);
     li.appendChild(scoreText);
+    listOfScores.appendChild(li);
   });
 };
 
@@ -41,3 +43,9 @@ submitBtn.addEventListener('click', (event) => {
   const score = document.getElementById('score').value;
   postData(user, score);
 });
+
+refreshBtn.addEventListener('click', () => {
+  displayData();
+});
+
+displayData();
