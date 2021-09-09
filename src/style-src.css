@@ -40,6 +40,18 @@ main {
   border: 1px solid #000;
 }
 
+.list ul {
+  display: flex;
+  flex-flow: column;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.flex-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 form {
   width: 50%;
   display: flex;
