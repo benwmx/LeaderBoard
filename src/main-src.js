@@ -1,6 +1,6 @@
 import './style-src.css';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/VSMpU4FtgeRTlXkLPFBz';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/aOXLFNfc45MvyePSMZFH';
 const submitBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
 
