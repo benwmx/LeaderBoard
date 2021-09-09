@@ -38,6 +38,20 @@ main {
 
 .list {
   border: 1px solid #000;
+  height: 70%;
+  overflow: auto;
+}
+
+.list ul {
+  display: flex;
+  flex-flow: column;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.flex-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 form {
