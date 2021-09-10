@@ -1,4 +1,4 @@
-import './style-src.css';
+import './style/style-src.css';
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/aOXLFNfc45MvyePSMZFH';
 const submitBtn = document.getElementById('submit');
