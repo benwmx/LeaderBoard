@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather+Sans&display=swap');
+$color-ebony: #39383b;
+$color-midnight-blue: #205c8c;
+$color-taupe: #a39d92;
+$color-cream: #daccc3;
+$font-lobster: 'Lobster', cursive;
+$font-meri: 'Merriweather Sans', sans-serif;
+
 body {
   position: relative;
+  background-image: url(/img/dark_pattern.png);
   display: flex;
   flex-flow: column;
   margin: 0;
@@ -11,11 +21,19 @@ body {
 
 h1 {
   margin: 20px;
+  font-family: $font-lobster;
+  color: $color-taupe;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: $font-meri;
+  font-size: 2rem;
+  color: $color-cream;
 }
 
 main {
   height: 75%;
-  border: 5px solid #000;
   display: flex;
   margin: 20px 80px;
 }
@@ -24,70 +42,127 @@ main {
   padding: 0 50px;
 }
 
-.score-container {
-  width: 50%;
-  position: relative;
-}
-
-#refresh {
-  position: absolute;
-  top: 2.5%;
-  right: 50px;
-  padding: 4px 10px;
-}
-
-.list {
-  border: 1px solid #000;
-  height: 70%;
-  overflow: auto;
-}
-
-.list ul {
-  display: flex;
-  flex-flow: column;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.flex-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-form {
-  width: 50%;
-  display: flex;
-  flex-flow: column;
-}
-
-form .input {
-  margin-bottom: 30px;
-}
-
-form input {
-  height: 2rem;
-}
-
-#submit {
-  width: 50%;
-  align-self: flex-end;
-}
-
 footer {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgb(99, 99, 99);
+  background-color: $color-taupe;
   padding: 5px 40px;
+
+  p {
+    font-size: 1.2rem;
+    color: $color-ebony;
+    font-family: $font-lobster;
+  }
+
+  .fa-copyright {
+    margin: 0 20px;
+  }
 }
 
-.fa-copyright {
-  margin: 0 20px;
+@mixin btn($back-color : $color-midnight-blue) {
+  font-size: 1.1rem;
+  background-color: $back-color;
+  color: $color-cream;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 2px 2px 5px $color-taupe;
 }
 
-footer p {
-  font-size: 1.2rem;
-  color: #fff;
+.score-container {
+  width: 50%;
+  position: relative;
+
+  .list {
+    height: 70%;
+    overflow: auto;
+    scrollbar-color: $color-cream transparent;
+
+    ul {
+      display: flex;
+      flex-flow: column;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .flex-list {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+
+      p {
+        font-size: 1.2rem;
+        font-family: $font-meri;
+      }
+
+      .user {
+        color: $color-cream;
+      }
+
+      .score {
+        color: white;
+      }
+    }
+  }
+
+  #refresh {
+    @include btn;
+
+    position: absolute;
+    top: 4%;
+    right: 50px;
+    padding: 8px 35px;
+  }
+
+  #refresh:active {
+    background-color: darken($color-midnight-blue, 6);
+    color: black;
+  }
+}
+
+form {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-flow: column;
+
+  input {
+    height: 2rem;
+  }
+
+  .input {
+    margin-bottom: 30px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .input:focus {
+    background-color: lighten($color-ebony, $amount: 20);
+  }
+
+  .input::placeholder {
+    color: $color-cream;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  #submit {
+    @include btn($back-color: mix($color-midnight-blue, green));
+
+    width: 40%;
+    align-self: flex-end;
+  }
+
+  #submit:active {
+    background-color: darken(mix($color-midnight-blue, green), 6);
+    color: black;
+  }
 }
