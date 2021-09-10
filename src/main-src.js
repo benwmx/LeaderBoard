@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import './style/style-src.css';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/aOXLFNfc45MvyePSMZFH';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/bvscpmjtUfg4AW2dXLnh';
 const submitBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
 const user = document.getElementById('user');
@@ -73,3 +73,11 @@ refreshBtn.addEventListener('click', () => {
 });
 
 displayData();
+
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
+  method: 'POST',
+  body: JSON.stringify({
+    name: 'Rachid Game 2',
+  }),
+  headers: { 'Content-Type': 'application/json' },
+}).then((response) => response.json()).then((responseData) => console.log(responseData));
