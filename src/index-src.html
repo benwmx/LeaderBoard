@@ -13,7 +13,7 @@
   <h1>Leaderboard</h1>
   <main>
     <div class="score-container main-item">
-      <h2> Recent scores </h2>
+      <h2> Recent Scores </h2>
       <input id="refresh" type="button" value="Refresh">
       <div id="list" class="list">
         <p id="msg-empty">THe list is Empty</p>
@@ -24,6 +24,8 @@
       <input class="input" id="user" name="user" type="text" placeholder="Your name">
       <input class="input" id="score" name="score" type="text" placeholder="Your score">
       <input id="submit" type="submit" value="Submit">
+      <p class="d-none" id="error-msg">Error : empty/invalid input!! 😠 </p>
+      <p class="d-none" id="success-msg">Good job 🙂</p>
     </form>
   </main>
   <footer>

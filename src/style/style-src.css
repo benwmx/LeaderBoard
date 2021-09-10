@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather+Sans&display=swap");
+body {
+  position: relative;
+  background-image: url(/img/dark_pattern.png);
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 20px;
+  font-family: "Lobster", cursive;
+  color: #a39d92;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 2rem;
+  color: #daccc3;
+}
+
+main {
+  height: 75%;
+  display: flex;
+  margin: 20px 80px;
+}
+
+.main-item {
+  padding: 0 50px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #a39d92;
+  padding: 5px 40px;
+}
+footer p {
+  font-size: 1.2rem;
+  color: #39383b;
+  font-family: "Lobster", cursive;
+}
+footer .fa-copyright {
+  margin: 0 20px;
+}
+
+.score-container {
+  width: 50%;
+  position: relative;
+}
+.score-container .list {
+  height: 70%;
+  overflow: auto;
+  scrollbar-color: #daccc3 transparent;
+}
+.score-container .list ul {
+  display: flex;
+  flex-flow: column;
+  list-style-type: none;
+  padding-left: 0;
+}
+.score-container .list .flex-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.score-container .list .flex-list p {
+  font-size: 1.2rem;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.score-container .list .flex-list .user {
+  color: #daccc3;
+}
+.score-container .list .flex-list .score {
+  color: white;
+}
+.score-container #refresh {
+  font-size: 1.1rem;
+  background-color: #205c8c;
+  color: #daccc3;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 2px 2px 5px #a39d92;
+  position: absolute;
+  top: 4%;
+  right: 50px;
+  padding: 8px 35px;
+}
+.score-container #refresh:active {
+  background-color: #1a4c73;
+  color: black;
+}
+
+form {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-flow: column;
+}
+form input {
+  height: 2rem;
+}
+form .input {
+  margin-bottom: 30px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #daccc3;
+}
+form .input:focus {
+  background-color: #6c6a6f;
+}
+form .input::placeholder {
+  color: #daccc3;
+  font-size: 1rem;
+  font-style: italic;
+}
+form #submit {
+  font-size: 1.1rem;
+  background-color: #106e46;
+  color: #daccc3;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 2px 2px 5px #a39d92;
+  width: 40%;
+  align-self: flex-end;
+}
+form #submit:active {
+  background-color: #0c5335;
+  color: black;
+}
+form #error-msg {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: red;
+}
+form #success-msg {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: green;
+}
+
+.d-none {
+  display: none;
+}
+
+/*# sourceMappingURL=style-src.css.map */

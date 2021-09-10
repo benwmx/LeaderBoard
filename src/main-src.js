@@ -1,8 +1,11 @@
-import './style-src.css';
+/* eslint-disable no-restricted-globals */
+import './style/style-src.css';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/aOXLFNfc45MvyePSMZFH';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/bvscpmjtUfg4AW2dXLnh';
 const submitBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
+const user = document.getElementById('user');
+const score = document.getElementById('score');
 
 const postData = async (user, score) => {
   await fetch(`${url}/scores`, {
@@ -10,6 +13,23 @@ const postData = async (user, score) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ user, score }),
   });
+};
+
+const clearInputs = () => {
+  user.value = '';
+  score.value = '';
+};
+
+const confirmationMessage = (valid) => {
+  const errorMessage = document.getElementById('error-msg');
+  const successMessage = document.getElementById('success-msg');
+  if (valid) {
+    successMessage.classList.remove('d-none');
+    errorMessage.classList.add('d-none');
+  } else {
+    successMessage.classList.add('d-none');
+    errorMessage.classList.remove('d-none');
+  }
 };
 
 const addScoresToDom = (scores) => {
@@ -39,9 +59,13 @@ const displayData = async () => {
 
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  const user = document.getElementById('user').value;
-  const score = document.getElementById('score').value;
-  postData(user, score);
+  if (user.value.length === 0 || score.value.length === 0 || isNaN(score.value)) {
+    confirmationMessage(false);
+  } else {
+    confirmationMessage(true);
+    postData(user.value, score.value);
+  }
+  clearInputs();
 });
 
 refreshBtn.addEventListener('click', () => {
@@ -49,3 +73,11 @@ refreshBtn.addEventListener('click', () => {
 });
 
 displayData();
+
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
+  method: 'POST',
+  body: JSON.stringify({
+    name: 'Rachid Game 2',
+  }),
+  headers: { 'Content-Type': 'application/json' },
+}).then((response) => response.json()).then((responseData) => console.log(responseData));
