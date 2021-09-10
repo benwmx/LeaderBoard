@@ -146,5 +146,15 @@ form #submit:active {
   background-color: #0c5335;
   color: black;
 }
+form #error-msg {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: red;
+}
+form #success-msg {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: green;
+}
 
 /*# sourceMappingURL=style-src.css.map */

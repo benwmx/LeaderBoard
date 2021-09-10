@@ -62,6 +62,11 @@ footer {
   }
 }
 
+@mixin validation-msg {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
 @mixin btn($back-color : $color-midnight-blue) {
   font-size: 1.1rem;
   background-color: $back-color;
@@ -164,5 +169,17 @@ form {
   #submit:active {
     background-color: darken(mix($color-midnight-blue, green), 6);
     color: black;
+  }
+
+  #error-msg {
+    @include validation-msg;
+
+    color: red;
+  }
+
+  #success-msg {
+    @include validation-msg;
+
+    color: green;
   }
 }
