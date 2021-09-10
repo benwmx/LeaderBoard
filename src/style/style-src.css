@@ -119,6 +119,7 @@ form .input {
   border-top: none;
   border-left: none;
   border-right: none;
+  color: #daccc3;
 }
 form .input:focus {
   background-color: #6c6a6f;
@@ -155,6 +156,10 @@ form #success-msg {
   margin-top: 50px;
   margin-left: 50px;
   color: green;
+}
+
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=style-src.css.map */
