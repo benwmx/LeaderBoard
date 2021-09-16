@@ -73,11 +73,3 @@ refreshBtn.addEventListener('click', () => {
 });
 
 displayData();
-
-fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
-  method: 'POST',
-  body: JSON.stringify({
-    name: 'Rachid Game 2',
-  }),
-  headers: { 'Content-Type': 'application/json' },
-}).then((response) => response.json()).then((responseData) => console.log(responseData));
